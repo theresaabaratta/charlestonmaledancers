@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Charleston Male Butlers | Book a Butler for Your Party</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --blush: #E8C4B8;
+      --dark: #1A1A1A;
+      --mid: #2E2E2E;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--dark);
+      color: #e0d8d0;
+    }
+
+    /* ── HEADER ── */
+    .site-header {
+      background: #111;
+      border-bottom: 1px solid #2a2a2a;
+      padding: 18px 0;
+      text-align: center;
+    }
+
+    .site-header a {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .site-header a span { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #1A1A1A 0%, #1a100a 100%);
+      border-bottom: 1px solid var(--gold);
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+
+    .hero .eyebrow {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero h1 span { color: var(--gold); }
+
+    .hero p.lead {
+      max-width: 640px;
+      margin: 0 auto 2rem;
+      color: #c0b8b0;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .btn-book {
+      background: var(--gold);
+      color: #1A1A1A;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 36px;
+      border-radius: 2px;
+      border: none;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+
+    .btn-book:hover { background: #e0ba5a; color: #1A1A1A; }
+
+    /* ── MEDIA SECTION ── */
+    .media-section {
+      background-color: var(--mid);
+      padding: 70px 0;
+      border-bottom: 1px solid #3a3a3a;
+    }
+
+    .media-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .media-section .sub {
+      text-align: center;
+      color: #888;
+      font-size: 0.88rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* VIDEO SLOT */
+    .video-slot {
+      background: #1a1a1a;
+      border: 1px dashed #444;
+      border-radius: 3px;
+      aspect-ratio: 16/9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      margin-bottom: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-slot video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+
+    .video-slot .slot-icon {
+      font-size: 2.8rem;
+      opacity: 0.35;
+      margin-bottom: 8px;
+    }
+
+    .video-slot .slot-label {
+      font-size: 0.75rem;
+      color: #444;
+      font-style: italic;
+      letter-spacing: 0.5px;
+    }
+
+    /* IMAGE SLOTS */
+    .img-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .img-slot {
+      background: #1a1a1a;
+      border: 1px dashed #444;
+      border-radius: 3px;
+      aspect-ratio: 4/5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .img-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+
+    .img-slot .slot-icon {
+      font-size: 2rem;
+      opacity: 0.3;
+      margin-bottom: 6px;
+    }
+
+    .img-slot .slot-label {
+      font-size: 0.72rem;
+      color: #444;
+      font-style: italic;
+    }
+
+    /* ── DISCLAIMER SECTION ── */
+    .disclaimer-section {
+      background: #111;
+      padding: 70px 0;
+      border-top: 1px solid #2a2a2a;
+    }
+
+    .disclaimer-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 1.4rem;
+    }
+
+    .disclaimer-block {
+      background: #1e1e1e;
+      border-left: 3px solid #444;
+      border-radius: 2px;
+      padding: 26px 30px;
+      font-size: 0.96rem;
+      line-height: 1.85;
+      color: #a09890;
+    }
+
+    .disclaimer-block strong { color: #e0d8d0; }
+    .disclaimer-block em { color: var(--blush); font-style: normal; font-weight: 600; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0d0d0d;
+      border-top: 1px solid #2a2a2a;
+      padding: 28px 0;
+      text-align: center;
+      color: #555;
+      font-size: 0.82rem;
+    }
+
+    footer a { color: var(--gold); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="index.html">Charleston <span>Male Dancers</span></a>
+  </header>
+
+  <!-- HERO / CTA -->
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">Charleston, SC &mdash; Available Now</span>
+      <h1>Hire a <span>Male Butler</span><br>for Your Charleston Party.</h1>
+      <p class="lead">
+        Think of it as the fun without the full show. Our Charleston male butlers are attentive, charming, easy on the eyes — and yes, they're exactly what you think they are, just with a bow tie instead of a G-string. <strong style="color:#fff;">We're not strippers.</strong> Think of us as a watered-down strippers but we are still male sex workers, classed-up version of that — the kind of entertainment that keeps the party going and the group chat on fire without anyone having to explain it to HR on Monday. Perfect for bachelorette parties, girls' nights, birthday parties, and private events across the Charleston area. Your butler pours, serves, plays along, and keeps the energy exactly where you want it. Book yours today — spots go fast on weekends.
+      </p>
+      <a href="tel:+18435550199" class="btn-book">Book a Butler — Call or Text</a>
+    </div>
+  </section>
+
+  <!-- MEDIA SECTION -->
+  <section class="media-section">
+    <div class="container" style="max-width: 860px;">
+
+      <h2>See What a Butler Night Looks Like.</h2>
+      <p class="sub">Video &amp; photos — replace placeholders with your own media below.</p>
+
+      <!-- VIDEO SLOT -->
+      <div class="video-slot">
+        <!-- Replace with your actual video:
+        <video autoplay muted loop playsinline>
+          <source src="butler-promo.mp4" type="video/mp4">
+        </video>
+        -->
+        <span class="slot-icon">🎬</span>
+        <span class="slot-label">Add butler promo video (.mp4)</span>
+      </div>
+
+      <!-- 2 IMAGE SLOTS -->
+      <div class="img-grid">
+
+        <div class="img-slot">
+          <!-- <img src="butler-photo-1.jpg" alt="Male Butler Charleston"> -->
+          <span class="slot-icon">📷</span>
+          <span class="slot-label">Add Photo 1</span>
+        </div>
+
+        <div class="img-slot">
+          <!-- <img src="butler-photo-2.jpg" alt="Male Butler Charleston"> -->
+          <span class="slot-icon">📷</span>
+          <span class="slot-label">Add Photo 2</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p class="mb-0">&copy; 2025 Charleston Male Dancers &mdash; <a href="index.html">Home</a> &mdash; Charleston, SC</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
