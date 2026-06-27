@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Charleston Male Dancers | Book Real Entertainers</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --blush: #E8C4B8;
+      --dark: #1A1A1A;
+      --mid: #2E2E2E;
+      --soft: #F5F0EB;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--dark);
+      color: #e0d8d0;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #1A1A1A 0%, #2a1a0e 100%);
+      border-bottom: 1px solid var(--gold);
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p.lead {
+      max-width: 600px;
+      margin: 1.2rem auto 2rem;
+      color: #c0b8b0;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .btn-book {
+      background: var(--gold);
+      color: #1A1A1A;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 36px;
+      border-radius: 2px;
+      border: none;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+
+    .btn-book:hover {
+      background: #e0ba5a;
+      color: #1A1A1A;
+    }
+
+    /* ── TRUTH SECTION ── */
+    .truth-section {
+      background-color: var(--mid);
+      padding: 70px 0;
+    }
+
+    .truth-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    /* ── PHOTO GRID ── */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 576px) {
+      .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .photo-slot {
+      aspect-ratio: 3/4;
+      background-color: #3a3a3a;
+      border: 1px dashed #555;
+      border-radius: 3px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-size: 0.75rem;
+      text-align: center;
+      padding: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+
+    .photo-slot .placeholder-icon {
+      font-size: 2rem;
+      margin-bottom: 6px;
+      opacity: 0.4;
+    }
+
+    .photo-slot .placeholder-label {
+      font-size: 0.7rem;
+      color: #555;
+      font-style: italic;
+    }
+
+    /* fake "NOT REAL" ribbon */
+    .photo-slot::after {
+      content: "NOT REAL";
+      position: absolute;
+      top: 12px;
+      right: -18px;
+      background: #c0392b;
+      color: #fff;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 3px 22px;
+      transform: rotate(35deg);
+    }
+
+    /* ── CALL-OUT COPY ── */
+    .callout-copy {
+      background: #1f1f1f;
+      border-left: 3px solid var(--gold);
+      border-radius: 2px;
+      padding: 24px 28px;
+      font-size: 0.97rem;
+      line-height: 1.8;
+      color: #c8c0b8;
+    }
+
+    .callout-copy strong {
+      color: var(--blush);
+    }
+
+    /* ── SHOW SECTION ── */
+    .show-section {
+      background: linear-gradient(160deg, #111 0%, #1e1208 100%);
+      padding: 80px 0;
+      border-top: 1px solid #2a2a2a;
+      border-bottom: 1px solid var(--gold);
+    }
+
+    .show-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 0.4rem;
+    }
+
+    .show-section h2 span {
+      color: var(--gold);
+    }
+
+    .show-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 1.6rem 0 3rem;
+    }
+
+    .badge-pill {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 999px;
+    }
+
+    /* real photos — no ribbon */
+    .photo-grid-real .photo-slot::after {
+      display: none;
+    }
+
+    .photo-grid-real .photo-slot {
+      border-color: #3a3020;
+    }
+
+    .smoke-copy {
+      background: #1a1a1a;
+      border-left: 3px solid #555;
+      border-radius: 2px;
+      padding: 24px 28px;
+      font-size: 0.97rem;
+      line-height: 1.8;
+      color: #a09890;
+      margin-top: 2.5rem;
+    }
+
+    .smoke-copy strong {
+      color: #e0d8d0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #111;
+      border-top: 1px solid #2a2a2a;
+      padding: 28px 0;
+      text-align: center;
+      color: #555;
+      font-size: 0.82rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Charleston's <span>Real</span> Male Dancers.<br>Book Direct. No Games.</h1>
+      <p class="lead">Skip the shady middlemen and fake portfolios. Charleston Male Dancers connects you directly with real, professional entertainers for bachelorette parties, girls' nights, and private events in the Charleston area.</p>
+      <a href="tel:+18435550199" class="btn-book">Book Now — Call or Text</a>
+    </div>
+  </section>
+
+  <!-- TRUTH SECTION -->
+  <section class="truth-section">
+    <div class="container" style="max-width: 860px;">
+
+      <h2>Can We Stop Doing This.</h2>
+
+      <!-- PHOTO GRID: replace src="" with your actual image paths -->
+      <div class="photo-grid">
+
+        <div class="photo-slot">
+          <!-- <img src="your-photo-1.jpg" alt="Entertainer 1"> -->
+          <span class="placeholder-icon">👤</span>
+          <span class="placeholder-label">Add Photo</span>
+        </div>
+
+        <div class="photo-slot">
+          <!-- <img src="your-photo-2.jpg" alt="Entertainer 2"> -->
+          <span class="placeholder-icon">👤</span>
+          <span class="placeholder-label">Add Photo</span>
+        </div>
+
+        <div class="photo-slot">
+          <!-- <img src="your-photo-3.jpg" alt="Entertainer 3"> -->
+          <span class="placeholder-icon">👤</span>
+          <span class="placeholder-label">Add Photo</span>
+        </div>
+
+        <div class="photo-slot">
+          <!-- <img src="your-photo-4.jpg" alt="Entertainer 4"> -->
+          <span class="placeholder-icon">👤</span>
+          <span class="placeholder-label">Add Photo</span>
+        </div>
+
+        <div class="photo-slot">
+          <!-- <img src="your-photo-5.jpg" alt="Entertainer 5"> -->
+          <span class="placeholder-icon">👤</span>
+          <span class="placeholder-label">Add Photo</span>
+        </div>
+
+        <div class="photo-slot">
+          <!-- <img src="your-photo-6.jpg" alt="Entertainer 6"> -->
+          <span class="placeholder-icon">👤</span>
+          <span class="placeholder-label">Add Photo</span>
+        </div>
+
+      </div>
+      <!-- END PHOTO GRID -->
+
+      <!-- CALLOUT COPY -->
+      <div class="callout-copy">
+        <p>Ladies — bachelorettes especially — <strong>stop drooling over photos of men who will never show up to your party.</strong> Seriously. Those perfectly chiseled, suspiciously flawless guys plastered all over stripper booking websites? AI-generated. Stock photos. Instagram models who've never set foot in South Carolina. Booking agents and promoters have been running this playbook for years, pulling photos from model portfolios and AI image generators to sell you on a fantasy that walks right out the door when the real performer shows up. And here's the lazy part — <strong>come on, they can't even be bothered to swap out the photos between cities.</strong> The same guy is supposedly available tonight in Charleston, Atlanta, and Houston. That's not an entertainer. That's a stock image with a phone number attached. Don't let a slick website and a fake six-pack talk you out of your money before you've seen a single real face. Book with people who show you who's actually coming — because your bachelorette night deserves the real thing, not a catfish.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SHOW SECTION -->
+  <section class="show-section">
+    <div class="container" style="max-width: 860px;">
+
+      <h2>Charleston's <span>#1</span> Male Touring Show.</h2>
+
+      <div class="show-badges">
+        <span class="badge-pill">#1 Male Touring Show in Charleston</span>
+        <span class="badge-pill">#1 Male Entertainers</span>
+        <span class="badge-pill">#1 Real Photos</span>
+      </div>
+
+      <!-- REAL PHOTO GRID -->
+      <div class="photo-grid photo-grid-real">
+
+        <div class="photo-slot">
+          <!-- <img src="show-photo-1.jpg" alt="Performer 1"> -->
+          <span class="placeholder-icon">🎭</span>
+          <span class="placeholder-label">Add Real Photo</span>
+        </div>
+
+        <div class="photo-slot">
+          <!-- <img src="show-photo-2.jpg" alt="Performer 2"> -->
+          <span class="placeholder-icon">🎭</span>
+          <span class="placeholder-label">Add Real Photo</span>
+        </div>
+
+        <div class="photo-slot">
+          <!-- <img src="show-photo-3.jpg" alt="Performer 3"> -->
+          <span class="placeholder-icon">🎭</span>
+          <span class="placeholder-label">Add Real Photo</span>
+        </div>
+
+        <div class="photo-slot">
+          <!-- <img src="show-photo-4.jpg" alt="Performer 4"> -->
+          <span class="placeholder-icon">🎭</span>
+          <span class="placeholder-label">Add Real Photo</span>
+        </div>
+
+        <div class="photo-slot">
+          <!-- <img src="show-photo-5.jpg" alt="Performer 5"> -->
+          <span class="placeholder-icon">🎭</span>
+          <span class="placeholder-label">Add Real Photo</span>
+        </div>
+
+        <div class="photo-slot">
+          <!-- <img src="show-photo-6.jpg" alt="Performer 6"> -->
+          <span class="placeholder-icon">🎭</span>
+          <span class="placeholder-label">Add Real Photo</span>
+        </div>
+
+      </div>
+      <!-- END REAL PHOTO GRID -->
+
+      <!-- SMOKE & MIRRORS COPY -->
+      <div class="smoke-copy">
+        <p>Let's be real — hiring male strippers is a smoke and mirrors show at best. <strong>You browse a website that looks polished, you see photos of men who look like they fell out of a magazine, you call a number, and someone very confident takes your deposit.</strong> Then the night arrives. What walks through the door is… a surprise. Maybe a good one, maybe not. The industry runs on hype, hustle, and the assumption that once the party starts you're too invested to complain. That's not entertainment — that's a gamble with your bachelorette budget. <strong>Charleston Male Dancers operates differently.</strong> Our touring show brings the same verified performers to every event. The photos on this site are the actual men who will show up. No switcheroo, no last-minute substitutions, no mystery. When you book Charleston's #1 male touring show, the smoke clears — and what you get is exactly what you were promised.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p class="mb-0">&copy; 2025 Charleston Male Dancers &mdash; Charleston, SC &mdash; Real Entertainers, Real Results</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
